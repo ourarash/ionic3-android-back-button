@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs #tabs>
+  <ion-tab [root]="tab1Root"  tabTitle="Page1" tabIcon="ios-home-outline"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Page2" tabIcon="ios-planet-outline"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Page3" tabIcon="ios-star-outline"></ion-tab>
+</ion-tabs>
