@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
-import { Platform, MenuController, AlertController, Nav, Tab } from "ionic-angular";
+import { Platform, MenuController, AlertController, Nav, Tab, ToastController } from "ionic-angular";
 
 import { HomePage } from "../pages/home/home";
 import { ListPage } from "../pages/list/list";
@@ -24,7 +24,8 @@ export class MyApp {
     public splashScreen: SplashScreen,
     private alertController: AlertController,
     public menu: MenuController,
-    private backbuttonService: BackbuttonService
+    private backbuttonService: BackbuttonService,
+    private toastController: ToastController
   ) {
     this.initializeApp();
 
@@ -51,6 +52,18 @@ export class MyApp {
 
   registerBackButton() {
     this.platform.registerBackButtonAction(() => {
+      let toast = this.toastController.create({
+        message: "Back button pushed!",
+
+        duration: 1000,
+
+        dismissOnPageChange: false,
+        position: "middle",
+        cssClass:"my-toast",
+      });
+
+      toast.present();
+
       if (this.menu.isOpen()) {
         console.log("Menu is open!", "loggedInMenu");
         this.menu.close();
