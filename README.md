@@ -8,7 +8,7 @@ Performing the following checks:
 * Close any pushed page
 * Switch between tabs
 
-![Demo](demo.gif)
+![Demo](demo.gif=250x)
 
 
 ## Getting Started
